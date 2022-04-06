@@ -19,6 +19,7 @@ func InitRouter(r *gin.Engine) {
 		user.Use(cors.Default())
 		{
 			user.GET("/hello", HelloWorld)
+			user.GET("/ticket", GetTicket)
 		}
 	}
 }
