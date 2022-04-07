@@ -51,7 +51,7 @@ func databaseInit() {
 	util.CreateTableIfNotExist(db, temp)
 
 	var u models.Candidates
-	db.Where("name=?", "张三").Find(&u)
+	db.Where("name=?", "sam").Find(&u)
 	if (u == models.Candidates{}) {
 		user := models.Candidates{
 			Name:  "sam",
@@ -59,7 +59,7 @@ func databaseInit() {
 		}
 		db.Create(user)
 	}
-	db.Where("name=?", "李四").Find(&u)
+	db.Where("name=?", "mike").Find(&u)
 	if (u == models.Candidates{}) {
 		user := models.Candidates{
 			Name:  "mike",
@@ -67,7 +67,7 @@ func databaseInit() {
 		}
 		db.Create(user)
 	}
-	db.Where("name=?", "王五").Find(&u)
+	db.Where("name=?", "QQ").Find(&u)
 	if (u == models.Candidates{}) {
 		user := models.Candidates{
 			Name:  "QQ",
