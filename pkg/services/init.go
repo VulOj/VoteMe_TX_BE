@@ -54,7 +54,7 @@ func databaseInit() {
 	db.Where("name=?", "张三").Find(&u)
 	if (u == models.Candidates{}) {
 		user := models.Candidates{
-			Name:  "张三",
+			Name:  "sam",
 			Score: 0,
 		}
 		db.Create(user)
@@ -62,7 +62,7 @@ func databaseInit() {
 	db.Where("name=?", "李四").Find(&u)
 	if (u == models.Candidates{}) {
 		user := models.Candidates{
-			Name:  "李四",
+			Name:  "mike",
 			Score: 0,
 		}
 		db.Create(user)
@@ -70,7 +70,7 @@ func databaseInit() {
 	db.Where("name=?", "王五").Find(&u)
 	if (u == models.Candidates{}) {
 		user := models.Candidates{
-			Name:  "王五",
+			Name:  "QQ",
 			Score: 0,
 		}
 		db.Create(user)
@@ -81,6 +81,7 @@ func databaseInit() {
 		ticket := models.Ticket{
 			TicketString: "init",
 			Time:         time.Now(),
+			Limit:        10,
 		}
 		db.Create(ticket)
 	}

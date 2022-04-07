@@ -9,8 +9,10 @@ import (
 
 func GetTicket(c *gin.Context) {
 	ticket := services.GetCurrentTicketDB()
+	if time.Since(ticket.Time) > 2000000000 {
+		services.CreateNewTicket()
+	}
 	c.JSON(http.StatusBadRequest, gin.H{
-		"msg":  time.Since(ticket.Time),
 		"name": ticket,
 	})
 	return

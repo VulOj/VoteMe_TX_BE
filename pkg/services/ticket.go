@@ -13,6 +13,7 @@ func CreateNewTicket() {
 	oneTicket := models.Ticket{
 		TicketString: CreatRandomTicketString(10),
 		Time:         time.Now(),
+		Limit:        10,
 	}
 	CreateTicketDB(oneTicket)
 }

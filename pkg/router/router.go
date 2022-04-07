@@ -20,6 +20,8 @@ func InitRouter(r *gin.Engine) {
 		{
 			user.GET("/hello", HelloWorld)
 			user.GET("/ticket", GetTicket)
+			user.GET("candidate-list", GetCandidates)
+			user.GET("candidate", GetOneCandidate)
 		}
 	}
 }
