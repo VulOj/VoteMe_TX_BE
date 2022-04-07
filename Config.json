@@ -4,7 +4,7 @@
     "Username":"root",
     "Password" :"123456",
     "Hostname" :"127.0.0.1:3306",
-    "Dbname" :"VoteMe"
+    "Dbname" :"VoteMe_1"
   },
   "RedisSettings": {
     "Address":"127.0.0.1",

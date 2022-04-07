@@ -2,6 +2,7 @@ package services
 
 import (
 	"VoteMe_BE_TX/models"
+	"VoteMe_BE_TX/pkg/consts"
 	"VoteMe_BE_TX/pkg/util"
 	"database/sql"
 	"fmt"
@@ -81,7 +82,7 @@ func databaseInit() {
 		ticket := models.Ticket{
 			TicketString: "init",
 			Time:         time.Now(),
-			Limit:        10,
+			Limit:        consts.VALID_SCORE,
 		}
 		db.Create(ticket)
 	}

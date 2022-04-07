@@ -2,6 +2,7 @@ package services
 
 import (
 	"VoteMe_BE_TX/models"
+	"VoteMe_BE_TX/pkg/consts"
 	"math/rand"
 	"time"
 )
@@ -13,7 +14,7 @@ func CreateNewTicket() {
 	oneTicket := models.Ticket{
 		TicketString: CreatRandomTicketString(10),
 		Time:         time.Now(),
-		Limit:        10,
+		Limit:        consts.VALID_SCORE,
 	}
 	CreateTicketDB(oneTicket)
 }
