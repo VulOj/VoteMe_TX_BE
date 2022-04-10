@@ -5,12 +5,16 @@ import (
 )
 
 func GetCurrentTicketDB() (ticket models.Ticket) {
-	db.Find(&ticket)
+	db.Last(&ticket)
 	return
 }
 
 func CreateTicketDB(ticket models.Ticket) {
 	db.Create(&ticket)
+}
+func DeleteOldTicket() {
+	var ticket models.Ticket
+	db.Delete(&ticket)
 }
 func UpdateTicket(ticketstring string, limit int) {
 	var ticket models.Ticket

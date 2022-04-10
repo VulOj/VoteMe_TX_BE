@@ -11,6 +11,7 @@ import (
 func GetTicket(c *gin.Context) {
 	ticket := services.GetCurrentTicketDB()
 	if time.Since(ticket.Time) > consts.VALID_TIME {
+		services.DeleteOldTicket()
 		services.CreateNewTicket()
 	}
 	c.JSON(http.StatusOK, gin.H{
